@@ -14,7 +14,17 @@ logo = """
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def search_and_download_video():
+def download_video(video):
+    stream = video.streams.get_highest_resolution()
+    stream.download()
+    print("Download completed!")
+
+def download_audio(video):
+    audio_stream = video.streams.filter(only_audio=True).first()
+    audio_stream.download()
+    print("Audio download completed!")
+
+def search_and_download():
     query = input("Enter your search query: ")
     search_results = Search(query)
     
@@ -25,24 +35,34 @@ def search_and_download_video():
     selected_video = search_results.results[choice - 1]
     
     video = YouTube(selected_video.watch_url)
-    stream = video.streams.get_highest_resolution()
-    stream.download()
     
-    print("Download completed!")
+    print("\nChoose an option:")
+    print("1. Download Video")
+    print("2. Download Audio (MP3)")
+    
+    download_choice = input("Enter your choice (1 or 2): ")
+    
+    if download_choice == '1':
+        download_video(video)
+    elif download_choice == '2':
+        download_audio(video)
+    else:
+        print("Invalid choice. Please select a valid option.")
 
 def main():
     clear_screen()
     print(logo)
     print("Welcome to Video Downloader!")
+    
     while True:
         print("\nMain Menu:")
-        print("1. Search and Download Video")
+        print("1. Search and Download")
         print("2. Exit")
         
         choice = input("Select an option: ")
         
         if choice == '1':
-            search_and_download_video()
+            search_and_download()
         elif choice == '2':
             print("Exiting...")
             break
