@@ -11,7 +11,7 @@ The Video Downloader is a Python script that allows you to search for and downlo
 You can clone this repository using Git with the following command:
 
 ```bash
-git clone https://github.com/yourusername/videodownloader.git
+git clone https://github.com/xahirlehri/downtube.git
 ```
 
 Replace `yourusername` with your actual GitHub username.
@@ -52,10 +52,6 @@ pip install -r requirements.txt
 
 6. To exit the program, select option 2 (Exit).
 
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Author
 
