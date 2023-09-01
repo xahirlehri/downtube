@@ -20,8 +20,9 @@ def download_video(video):
     print("Download completed!")
 
 def download_audio(video):
+    # Download audio stream in MP3 format
     audio_stream = video.streams.filter(only_audio=True).first()
-    audio_stream.download()
+    audio_stream.download(filename=f"{video.title}.mp3")
     print("Audio download completed!")
 
 def search_and_download():
