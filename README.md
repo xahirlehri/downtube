@@ -1,7 +1,5 @@
 # Video Downloader
 
-![Video Downloader Logo](logo.png)
-
 ## Overview
 
 The Video Downloader is a Python script that allows you to search for and download videos from YouTube using the Pytube library. It provides a simple command-line interface for searching, selecting, and downloading videos.
@@ -13,9 +11,6 @@ You can clone this repository using Git with the following command:
 ```bash
 git clone https://github.com/xahirlehri/downtube.git
 ```
-
-Replace `yourusername` with your actual GitHub username.
-
 ## Prerequisites
 
 Before running the script, make sure you have Python installed on your system. You will also need to install the required Python libraries listed in the `requirements.txt` file. You can install them using the following command:
